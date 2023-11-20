@@ -3,8 +3,7 @@ const app = express();
 import env from "dotenv";
 env.config();
 app.set('view engine', 'ejs');
-
-
+app.use(express.static('./public'));
 import clientRoute from './src/Routes/client-route.js'
 app.get('/', (req, res) => {
     res.redirect('/client/')
