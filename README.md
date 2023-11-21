@@ -1,11 +1,12 @@
 
 # Go-Food Clone
 
-![Uploading Untitled2.png…]()
+
+![Untitled2](https://github.com/unix-waltz/Fullstack-GO-FOOD-Clone-MongoDB-Express-NodeJS-/assets/106463487/435c426b-5e8f-4c05-9d45-a62b6cf2cdac)
 
 
 
-Aplikasi web Go-Food Clone merupakan platform untuk memesan makanan dari berbagai restoran dengan berbagai fitur yang memudahkan pengguna dalam melakukan pemesanan.
+Aplikasi web Go-Food Clone merupakan platform untuk memesan makanan dari restoran dengan berbagai fitur yang memudahkan pengguna dalam melakukan pemesanan.
 
 ## Fitur
 
