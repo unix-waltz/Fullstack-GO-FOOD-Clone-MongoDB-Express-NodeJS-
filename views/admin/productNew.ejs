@@ -10,68 +10,30 @@
 
 <br><br>
 <section class="container">
-    <a href="/admin/dashboard/product/new" class="btn btn-danger">Tambah Menu</a>
- <br><br>
- <p class="d-inline-flex gap-1">
-    <a class="btn btn" style="border : 1px solid gray;" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Makanan</a>
-    <button class="btn btn" style="border : 1px solid gray;" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Minuman</button>
-    <button class="btn btn" style="border : 1px solid gray;"type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Lihat Semua</button>
-  </p>
-  <div class="row">
-    <div class="col">
-      <div class="collapse multi-collapse" id="multiCollapseExample1">
-        <div class="card card-body">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Menu</th>
-                    <th scope="col">Stok</th>
-                    <th scope="col">Total Penjualan</th>
-                    <th scope="col">Opsi</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                  </tr>
-                </tbody>
-              </table>
-              
-        </div>
-      </div>
+  <form action="" method="post" enctype="multipart/form-data">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Title</label>
+      <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
     </div>
-    
-    <div class="col">
-      <div class="collapse multi-collapse" id="multiCollapseExample2">
-        <div class="card card-body">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Menu</th>
-                    <th scope="col">Stok</th>
-                    <th scope="col">Total Penjualan</th>
-                    <th scope="col">Opsi</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                  </tr>
-                </tbody>
-              </table>
-        </div>
-      </div>
+    <div class="mb-3">
+      <label for="formFile" class="form-label">Thumbnail</label>
+      <input class="form-control" type="file" id="formFile">
     </div>
-  </div>
+    <label for="ctgr" class="form-label">Category</label>
+    <select class="form-select" id="ctgr" aria-label="Default select example">
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+    </select>
+<br>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Price</label>
+      <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description </label>
+      <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <button class="btn btn-sm btn-danger" type="submit">Add</button>
+  </form>
 </section>
 <%- include('../components_adm/footer.ejs') %>

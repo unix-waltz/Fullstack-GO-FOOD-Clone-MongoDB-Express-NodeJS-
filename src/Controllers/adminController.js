@@ -7,6 +7,9 @@ productView : (req, res) => {
 },
 newProductView : (req, res) => {
     res.render('admin/productNew');
+},
+newProduct : (req, res) => {
+    
 }
 }
 export default Controller;
