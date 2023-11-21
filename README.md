@@ -1,0 +1,64 @@
+# Go-Food Clone
+
+Aplikasi web Go-Food Clone merupakan platform untuk memesan makanan dari berbagai restoran dengan berbagai fitur yang memudahkan pengguna dalam melakukan pemesanan.
+
+## Fitur
+
+### :client: Pengguna
+
+1. **Pesan Makanan**
+   - Pengguna dapat menjelajahi menu restoran dan memesan makanan favorit mereka.
+   - Memilih variasi dan tambahan sesuai dengan preferensi.
+
+2. **Pesan Cepat**
+   - Fitur pesan cepat memungkinkan pengguna untuk melakukan pemesanan dengan beberapa klik.
+   - Pilihan pesanan sebelumnya tersedia untuk mempercepat proses pesanan.
+
+3. **Promo Delivery**
+   - Pengguna dapat memanfaatkan promo dan diskon khusus untuk pengiriman.
+
+4. **Notifikasi**
+   - Pemberitahuan real-time tentang status pesanan, perkembangan pengiriman, dan promo terbaru.
+
+5. **Histori Pesanan**
+   - Pengguna dapat melihat riwayat pesanan sebelumnya dan menduplikasi pesanan favorit mereka.
+
+### :admin: Admin
+
+1. **Manajemen Restoran**
+   - Menambah, mengedit, atau menghapus menu dan informasi restoran.
+
+2. **Analisis Penjualan**
+   - Melihat laporan penjualan dan performa menu.
+
+### :petugas: Petugas
+
+1. **Proses Pesanan**
+   - Menangani pesanan yang masuk, memastikan kecocokan pesanan, dan menetapkan pengemudi pengiriman.
+
+2. **Update Status Pesanan**
+   - Melakukan pembaruan status pesanan untuk memberi tahu pengguna tentang perkembangan pengiriman.
+
+## Teknologi yang Digunakan
+
+- **Frontend**: HTML, CSS, JavaScript, React
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **Authentication**: JSON Web Tokens (JWT)
+
+## Cara Menjalankan Aplikasi
+
+1. Clone repositori ini: ``
+2. Masuk ke direktori proyek: 
+3. Install dependensi: 
+4. Jalankan aplikasi: `npm start`
+
+Pastikan Anda memiliki Node.js dan MongoDB terinstal di sistem Anda sebelum menjalankan aplikasi.
+
+## Kontribusi
+
+Jika Anda ingin berkontribusi pada proyek ini, silakan buat *fork* dari repositori ini, lakukan perubahan, dan ajukan *pull request*. Kami sangat menghargai kontribusi Anda.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah [MIT License](LICENSE).
