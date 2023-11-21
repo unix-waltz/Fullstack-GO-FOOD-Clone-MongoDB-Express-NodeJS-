@@ -1,4 +1,9 @@
+
 # Go-Food Clone
+
+![Uploading Untitled2.png…]()
+
+
 
 Aplikasi web Go-Food Clone merupakan platform untuk memesan makanan dari berbagai restoran dengan berbagai fitur yang memudahkan pengguna dalam melakukan pemesanan.
 
