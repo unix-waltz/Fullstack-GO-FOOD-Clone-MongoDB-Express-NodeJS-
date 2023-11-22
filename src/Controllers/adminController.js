@@ -2,7 +2,7 @@ import DB from "./../Database/MonggoDB.js";
 import ProductModel from "../Model/productModel.js"
 const Controller = {
 dashboardView : (req, res) => {
-    res.render('admin/dashboard');
+    res.render('admin/dashboard',{message :req.flash('message'),alert: req.flash('alert')});
 },
 productView : (req, res) => {
     res.render('admin/product');
@@ -20,7 +20,16 @@ newProduct : async (req,res) => {
     });
     try{
     product = await product.save();
-    res.redirect('/');
+    if(product){
+        req.flash('message',"Add Product Successfully");
+        req.flash('alert','primary')
+res.redirect('/admin/dashboard');
+    }else{
+        req.flash('message',"Failed !")
+        req.flash('alert','danger')
+        res.redirect('/admin/dashboard');
+    }
+    
     }catch(e){
         console.log(e)
     }

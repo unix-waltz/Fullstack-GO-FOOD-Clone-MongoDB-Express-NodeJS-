@@ -17,7 +17,7 @@ const Schema = new mongoose.Schema({
         type : String,
     },
     thumbnail:{
-        required : false,
+        required : true,
         type : String,
     },
     discount:{

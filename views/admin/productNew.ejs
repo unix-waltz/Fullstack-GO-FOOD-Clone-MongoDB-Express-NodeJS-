@@ -13,11 +13,11 @@
   <form action="" method="post" enctype="multipart/form-data">
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Title</label>
-      <input type="text" class="form-control" name="title" id="exampleFormControlInput1" placeholder="name@example.com">
+      <input type="text" class="form-control" name="title" id="exampleFormControlInput1" placeholder="" required>
     </div>
     <div class="mb-3">
       <label for="formFile" class="form-label">Thumbnail</label>
-      <input class="form-control" name="thumbnail" type="file" id="formFile">
+      <input class="form-control" name="thumbnail" type="file" id="formFile" required>
     </div>
     <label for="ctgr" class="form-label">Category</label>
     <select class="form-select" id="ctgr" name="category" aria-label="Default select example">
@@ -27,11 +27,11 @@
 <br>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Price</label>
-      <input type="number" class="form-control" name="price" id="exampleFormControlInput1" placeholder="name@example.com">
+      <input type="number" class="form-control" name="price" id="exampleFormControlInput1" placeholder="" required>
     </div>
     <div class="mb-3">
       <label for="exampleFormControlTextarea1" class="form-label">Description </label>
-      <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
+      <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3" required></textarea>
     </div>
     <button class="btn btn-sm btn-danger" type="submit">Add</button>
   </form>
