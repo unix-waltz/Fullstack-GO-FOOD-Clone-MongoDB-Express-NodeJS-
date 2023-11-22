@@ -7,6 +7,10 @@ res.render('client/allMinuman',{minuman : minuman})
     getAllMakanan: async (req,res) => {
         const makanan = await productModel.find({ category: 'makanan' });
 res.render('client/allMakanan',{makanan : makanan})
+    },
+    index :async (req,res)=>{
+        const data = await productModel.find() 
+        res.render('client/index',{data: data})
     }
 }
 export default Controller;
