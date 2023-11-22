@@ -20,7 +20,7 @@ newProduct : async (req,res) => {
     });
     try{
     product = await product.save();
-    res.send("ProductModel");
+    res.redirect('/');
     }catch(e){
         console.log(e)
     }
