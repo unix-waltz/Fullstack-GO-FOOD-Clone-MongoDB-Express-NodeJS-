@@ -7,8 +7,8 @@
         position: fixed;
     }
 </style>
-
 <br><br>
+
 <section class="container">
     <a href="/admin/dashboard/product/new" class="btn btn-danger">Tambah Menu</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
  
@@ -33,13 +33,18 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <% let num = 1; %>
+                <% makanan.forEach(e => { %>
                   <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
+                    <th scope="row"><%= num++ %></th>
+                    <td><%= e.title %></td>
                     <td>Otto</td>
                     <td>@mdo</td>
-                    <td>Otto</td>
+                    <td>
+                      <a class="btn btn-sm" style="border:0.5px solid gray" href="/admin/product/detail/<%= e.id %>">Lainya</a>
+                    </td>
                   </tr>
+                <% }) %>
                 </tbody>
               </table>
               
@@ -61,13 +66,18 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th scope="row">1</th>
-                    <td>Mark</td>
-                    <td>Otto</td>
-                    <td>@mdo</td>
-                    <td>Otto</td>
-                  </tr>
+                  <% let n = 1; %>
+                  <% minuman.forEach(e => { %>
+                    <tr>
+                      <th scope="row"><%= n++ %></th>
+                      <td><%= e.title %></td>
+                      <td>Otto</td>
+                      <td>@mdo</td>
+                      <td>
+                        <a class="btn btn-sm" style="border:0.5px solid gray" href="/admin/product/detail/<%= e.id %>">Lainya</a>
+                      </td>
+                    </tr>
+                  <% }) %>
                 </tbody>
               </table>
         </div>

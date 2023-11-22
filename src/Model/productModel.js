@@ -24,5 +24,14 @@ const Schema = new mongoose.Schema({
         required : false,
         type : Number,
     },
+    total_seller:{
+        required : false,
+        type : Number,
+    },
+    stock:{
+        required : true,
+        type : Number,
+        default: 0,
+    },
 })
 export default mongoose.model("menu", Schema);
