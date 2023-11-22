@@ -16,7 +16,7 @@
  <p class="d-inline-flex gap-1">
     <a class="btn btn" style="border : 1px solid gray;" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Makanan</a>
     <button class="btn btn" style="border : 1px solid gray;" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Minuman</button>
-    <button class="btn btn" style="border : 1px solid gray;"type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">Lihat Semua</button>
+    <button class="btn btn" style="border : 1px solid gray;"type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2" active>Lihat Semua</button>
   </p>
   <div class="row">
     <div class="col">
@@ -27,7 +27,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Menu</th>
-                    <th scope="col">Stok</th>
+                    <th scope="col">Price</th>
                     <th scope="col">Total Penjualan</th>
                     <th scope="col">Opsi</th>
                   </tr>
@@ -38,7 +38,7 @@
                   <tr>
                     <th scope="row"><%= num++ %></th>
                     <td><%= e.title %></td>
-                    <td>Otto</td>
+                    <td><%= e.price %><</td>
                     <td>@mdo</td>
                     <td>
                       <a class="btn btn-sm" style="border:0.5px solid gray" href="/admin/product/detail/<%= e.id %>">Lainya</a>
@@ -60,7 +60,7 @@
                   <tr>
                     <th scope="col">#</th>
                     <th scope="col">Menu</th>
-                    <th scope="col">Stok</th>
+                    <th scope="col">Price</th>
                     <th scope="col">Total Penjualan</th>
                     <th scope="col">Opsi</th>
                   </tr>
@@ -71,7 +71,7 @@
                     <tr>
                       <th scope="row"><%= n++ %></th>
                       <td><%= e.title %></td>
-                      <td>Otto</td>
+                      <td><%= e.price %><</td>
                       <td>@mdo</td>
                       <td>
                         <a class="btn btn-sm" style="border:0.5px solid gray" href="/admin/product/detail/<%= e.id %>">Lainya</a>

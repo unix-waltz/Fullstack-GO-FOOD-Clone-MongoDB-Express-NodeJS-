@@ -17,7 +17,6 @@ newProduct : async (req,res) => {
         title : req.body.title,
         thumbnail : req.file.filename,
         price: req.body.price,
-        stock: req.body.stock,
         description: req.body.description,
         category : req.body.category,
     });

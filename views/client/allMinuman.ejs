@@ -1,0 +1,40 @@
+<%- include('../components/header.ejs') %>
+
+
+<section class="pt-5 pb-5" style="z-index: -99;" id="slidder">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <h5 class="mb-3"> Penawaran Menarik Nih ⚡️</h5>
+            </div>
+            <div class="col-12">
+                <div id="carouselExampleIndicators2" >
+
+                    <div class="">
+                        
+                        <div class=" active">
+                            <div class="row">
+<% minuman.forEach(e => { %>
+
+                                <div class="col-4 mb-3">
+                                    <div class="card" style="overflow: hidden;">
+                                        <img class="img-fluid" alt="100%x280" src="/images/<%= e.thumbnail %>" style="width:280px;height:100px">
+                                        <div class="card-body">
+                                            <h6 class="card-title"><%= e.title %></h6>
+                                            <a class="card-text btn btn-sm btn-danger" style="font-size:12px"><i class="bi bi-arrow-right-short"></i> Detail</a>
+                                        </div>
+                                    </div>
+                                </div>
+ 
+<% }) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<%- include('../components/footer.ejs') %>
