@@ -15,7 +15,35 @@ background-color:white;
           </button>
         </h2>
         <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+          <div class="accordion-body"><div class="box" style="
+            width :90%;
+            margin: 0 auto;
+            ">
+            <h5>Keranjang Anda</h5>
+            
+             <div class="card">
+                <div class="card-body">
+                    <img src="/images/<%= data.thumbnail %>" alt="" style="width:100px;border-radius:9px;">
+                    <h5 style="display:inline-block; margin-left:10px"><%= data.title %></h5>
+                  <span style="position:relative;left:100px;border:ipx solid gray">
+                    <button onclick="min()" class="btn btn-sm "><i class="bi bi-dash"></i></button>   <input style="border-radius: 5px;border:1/100px solid gray;" id="number" type="number" min="1" max="100"><button onclick="max()" class="btn btn-sm"><i class="bi bi-plus"></i></button></span>
+                    <script>
+                        document.getElementById("number").value = 1;
+                        document.getElementById("number").textContent =1;
+
+
+                        const min = ()=>{
+                            if(document.getElementById("number").value >= 2) document.getElementById("number").textContent = document.getElementById("number").value--;
+                        }
+                        const max = ()=>{
+                            if(document.getElementById("number").value < 100)   document.getElementById("number").textContent = document.getElementById("number").value++;
+                          
+                                                    }
+                    </script>
+                </div>
+              </div>
+              <br>
+              </div></div>
         </div>
       </div>
 </div>
