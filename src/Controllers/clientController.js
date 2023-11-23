@@ -42,7 +42,7 @@ res.render('client/allMakanan',{makanan : makanan})
         try {
           const data = await productModel.findById(req.params.id);
           if (data) {
-            res.render('client/payment2', { data: data });
+            res.render('client/payment2', { data: data,payment: req.body});
           } else {
             res.redirect('/');
           }
@@ -51,5 +51,11 @@ res.render('client/allMakanan',{makanan : makanan})
           res.status(500).send('Internal Server Error');
         } 
       },
+      paymentProccess: async (req, res) => {
+      if(req.body.qron){
+        
+      }
+      if(req.body.cashon) res.send('cashon')
+      }
 }
 export default Controller;
