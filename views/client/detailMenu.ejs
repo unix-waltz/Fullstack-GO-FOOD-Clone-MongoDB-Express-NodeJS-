@@ -1,0 +1,42 @@
+<%- include('../components/header.ejs') %>
+
+<div class="section" style="
+width: 100%;
+height: 100vh;
+background-color:white;
+">
+<br><br><br><br><br>
+<div class="box" style="
+width :90%;
+margin: 0 auto;
+">
+    <div class="card mb-3">
+        <img src="/images/<%= data.thumbnail %>" class="card-img-top" alt="...">
+        <div class="card-body">
+         
+          <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
+          <p class="card-text"><small class="text-body-secondary"></small></p>
+        </div>
+      </div> <br>
+      <h4 class="card-title"><%= data.title %></h4>
+     
+<h5>&nbsp;&nbsp;RP.&nbsp;<%= data.price %></h5>
+<div class="accordion accordion-flush" id="accordionExample">
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+          Lebih Banyak
+        </button>
+      </h2>
+      <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+        <div class="accordion-body">
+            <%= data.description %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+<%- include('../components/footer.ejs') %>

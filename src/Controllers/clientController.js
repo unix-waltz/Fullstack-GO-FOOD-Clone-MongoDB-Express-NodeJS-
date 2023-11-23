@@ -11,6 +11,20 @@ res.render('client/allMakanan',{makanan : makanan})
     index :async (req,res)=>{
         const data = await productModel.find() 
         res.render('client/index',{data: data})
-    }
+    },
+    detailMenu: async (req, res) => {
+        try {
+          const data = await productModel.findById(req.params.id);
+          if (data) {
+            res.render('client/detailMenu', { data: data });
+          } else {
+            res.redirect('/');
+          }
+        } catch (error) {
+          console.error(error);
+          res.status(500).send('Internal Server Error');
+        }
+      }
+      
 }
 export default Controller;
