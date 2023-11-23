@@ -37,7 +37,19 @@ res.render('client/allMakanan',{makanan : makanan})
           console.error(error);
           res.status(500).send('Internal Server Error');
         } 
-      }
-      
+      },
+      payment: async (req, res) => {
+        try {
+          const data = await productModel.findById(req.params.id);
+          if (data) {
+            res.render('client/payment2', { data: data });
+          } else {
+            res.redirect('/');
+          }
+        } catch (error) {
+          console.error(error);
+          res.status(500).send('Internal Server Error');
+        } 
+      },
 }
 export default Controller;

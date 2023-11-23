@@ -8,4 +8,5 @@ Route.get('/minuman',clientController.getAllMinuman)
 Route.get('/makanan',clientController.getAllMakanan)
 Route.get('/detail/menu/:id',clientController.detailMenu)
 Route.get('/payment/:id',clientController.paymentView)
+Route.post('/payment/get/:id',clientController.payment)
 export default Route;

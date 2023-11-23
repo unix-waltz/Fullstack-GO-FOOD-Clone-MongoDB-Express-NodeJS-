@@ -4,6 +4,8 @@ width: 100%;
 height: 100vh;
 background-color:white;
 ">
+<form action="/client/payment/get/<%= data.id %>" method="get">
+
 <br><br><br><br><br>
 <div class="accordion accordion-flush" id="accordionFlushExample">
    
@@ -25,7 +27,24 @@ background-color:white;
                     <img src="/images/<%= data.thumbnail %>" alt="" style="width:100px;border-radius:9px;">
                     <h5 style="display:inline-block; margin-left:10px"><%= data.title %></h5>
                   <span style="position:relative;left:100px;border:ipx solid gray">
-                   
+                   <button onclick="min()" class="btn btn-sm "><i class="bi bi-dash"></i></button>   <input name="waranty" style="border-radius: 5px;border:1/100px solid gray;" id="number" type="number" min="1" max="100"><button onclick="max()" class="btn btn-sm"><i class="bi bi-plus"></i></button></span>
+<script>
+    document.getElementById("number").value = 1;
+    document.getElementById("number").textContent =1;
+
+
+    const min = ()=>{
+        if(document.getElementById("number").value >= 2) {
+            document.getElementById("number").textContent = document.getElementById("number").value--;
+        }
+    }
+    const max = ()=>{
+        if(document.getElementById("number").value < 100)  {
+             document.getElementById("number").textContent = document.getElementById("number").value++;
+        }
+                                }
+        
+</script>
                 </div>
               </div>
               <br>
@@ -38,7 +57,6 @@ width :90%;
 margin: 0 auto;
 ">
 <h5>Pilih Metode Pembayaran</h5>
-<form action="/client/payment/get/<%= data.id %>" method="post">
 
 <div class="card">
     <input type="hidden" name="cashon">
@@ -52,26 +70,21 @@ margin: 0 auto;
         <i class="bi bi-cash-coin"></i> Bayar Langsung(Cash)
     </button>
   </div>
-     </form>  
-  <br>
-  <form action="/client/payment/get/<%= data.id %>" method="post">
-
-  <div class="card">
-    <input type="hidden"  name="qron">
-    <button type="submit" class="card-body" style="  border: none;
-    padding: 0;
-    background: none;
-    cursor: pointer;
-    text-align: left;
-    color: inherit;
-    padding:var(--bs-card-spacer-y) var(--bs-card-spacer-x);">
-        <i class="bi bi-qr-code"></i> QRCode <small style="color:yellowgreen;">*Beta</small>
-    </button>
-  </div>
-</form>
-  <br>
- 
+     
   </div>
 </div>
 
 <%- include('../components/footer.ejs') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
