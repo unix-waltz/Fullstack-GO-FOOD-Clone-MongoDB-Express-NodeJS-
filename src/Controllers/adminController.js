@@ -2,7 +2,7 @@ import DB from "./../Database/MonggoDB.js";
 import ProductModel from "../Model/productModel.js"
 const Controller = {
 dashboardView : (req, res) => {
-    res.render('admin/dashboard');
+    res.render('admin/dashboard',{message : false});
 },
 productView : async (req, res) => {
     const makanan = await ProductModel.find({ category: 'makanan' });
