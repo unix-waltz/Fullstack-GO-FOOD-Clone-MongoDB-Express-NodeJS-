@@ -11,7 +11,7 @@ width :90%;
 margin: 0 auto;
 ">
     <div class="card mb-3">
-        <img src="/images/<%= data.thumbnail %>" class="card-img-top" alt="...">
+        <img src="/images/<%= data.thumbnail %>" class="card-img-top" style="width:100%;height:100%;">
         <div class="card-body">
          
           <!-- <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p> -->
@@ -20,7 +20,7 @@ margin: 0 auto;
       </div> <br>
       <h4 class="card-title"><%= data.title %></h4>
      
-<h5>&nbsp;&nbsp;RP.&nbsp;<%= data.price %></h5>
+<h5>&nbsp;&nbsp;RP.&nbsp;<%= data.price %> </h5><%= data.discount %>
 <div class="accordion accordion-flush" id="accordionExample">
     <div class="accordion-item">
       <h2 class="accordion-header">
@@ -37,6 +37,22 @@ margin: 0 auto;
   </div>
 </div>
 
-
+<div class="fixed-bottom" style="
+width: 27%;
+height: 13vh;
+margin: 0 auto;
+">
+<div style="width: 60%; padding:10px;border-radius:12px;height:auto; box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+  <a class="btn btn-sm" style="border:1px solid black;">
+    <i class="bi bi-archive"></i>
+</a> 
+<a class="btn btn-sm" style="border:1px solid black;">
+  <i class="bi bi-cart"></i> Keranjang
+</a>  
+<a class="btn btn-sm btn-danger">
+  <i class="bi bi-bag"></i> Beli Langsung
+</a>
+  </div>
+</div>
 </div>
 <%- include('../components/footer.ejs') %>
