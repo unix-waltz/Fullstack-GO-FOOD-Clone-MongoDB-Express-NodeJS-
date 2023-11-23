@@ -49,10 +49,11 @@ margin: 0 auto;
 <a class="btn btn-sm" style="border:1px solid black;">
   <i class="bi bi-cart"></i> Keranjang
 </a>  
-<a class="btn btn-sm btn-danger">
+<a href="/client/payment/<%= data.id %>?gateway=true&product=<%= data.title %>" class="btn btn-sm btn-danger">
   <i class="bi bi-bag"></i> Beli Langsung
 </a>
   </div>
 </div>
 </div>
+
 <%- include('../components/footer.ejs') %>

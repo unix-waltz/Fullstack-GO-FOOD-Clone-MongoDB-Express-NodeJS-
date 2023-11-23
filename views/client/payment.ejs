@@ -1,0 +1,42 @@
+<%- include('../components/header.ejs') %>
+<div class="section" style="
+width: 100%;
+height: 100vh;
+background-color:white;
+">
+<br><br><br><br><br>
+
+<div class="accordion accordion-flush" id="accordionFlushExample">
+   
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
+           Detail Produk
+          </button>
+        </h2>
+        <div id="flush-collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
+          <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+        </div>
+      </div>
+</div>
+<div class="box" style="
+width :90%;
+margin: 0 auto;
+">
+<h5>Pilih Metode Pembayaran</h5>
+<div class="card">
+    <a href="" class="card-body">
+        <i class="bi bi-cash-coin"></i> Bayar Langsung(Cash)
+    </a>
+  </div>
+  <br>
+  <div class="card">
+    <a href="" class="card-body">
+        <i class="bi bi-qr-code"></i> QRCode <small style="color:yellowgreen;">*Beta</small>
+    </a>
+  </div>
+  <br>
+ 
+  </div>
+</div>
+<%- include('../components/footer.ejs') %>

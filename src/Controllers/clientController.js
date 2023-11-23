@@ -24,6 +24,19 @@ res.render('client/allMakanan',{makanan : makanan})
           console.error(error);
           res.status(500).send('Internal Server Error');
         }
+      },
+      paymentView: async (req, res) => {
+        try {
+          const data = await productModel.findById(req.params.id);
+          if (data) {
+            res.render('client/payment', { data: data });
+          } else {
+            res.redirect('/');
+          }
+        } catch (error) {
+          console.error(error);
+          res.status(500).send('Internal Server Error');
+        } 
       }
       
 }
