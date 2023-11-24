@@ -1,0 +1,28 @@
+<%- include('../components/header.ejs') %>
+
+<div class="section" style="
+width: 100%;
+height: 100vh;
+background-color:white;
+">
+<br><br><br><br><br>
+<div class="container">
+    <h5>Berikan Pendapat Anda 😇 </h5>
+    <br>
+    <form action="" method="post">
+        <div class="mb-3">
+            <label for="exampleFormControlInput1" class="form-label">Nama Anda</label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" >
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Pesan</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="exampleFormControlTextarea1" class="form-label">Saran</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-sm btn-danger">Send</button>
+    </form>
+</div>
+<%- include('../components/footer.ejs') %>

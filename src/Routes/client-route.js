@@ -10,4 +10,5 @@ Route.get('/detail/menu/:id',clientController.detailMenu)
 Route.get('/payment/:id',clientController.paymentView)
 Route.post('/payment/get/:id',clientController.payment)
 Route.post('/payment/proccess/:id',clientController.paymentProccessQr)
+Route.get('/inbox',clientController.inboxView)
 export default Route;

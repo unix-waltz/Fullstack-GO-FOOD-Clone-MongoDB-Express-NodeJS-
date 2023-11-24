@@ -78,6 +78,9 @@ res.render('client/payment_proccessQr',{qrcode:src,price:price,data : data,waran
         const price = data.price * req.body.waranty;
         res.render('client/payment_proccessCash',{price:price,data : data,waranty:req.body.waranty,swaranty : data.price})
       }
+      },
+      inboxView: (req,res)=>{
+        res.render('client/inboxView')
       }
 }
 export default Controller;
