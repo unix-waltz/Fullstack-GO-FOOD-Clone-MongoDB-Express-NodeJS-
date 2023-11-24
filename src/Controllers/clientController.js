@@ -52,7 +52,7 @@ res.render('client/allMakanan',{makanan : makanan})
           res.status(500).send('Internal Server Error');
         } 
       },
-      paymentProccess: async (req, res) => {
+      paymentProccessQr: async (req, res) => {
       if(req.body.qron){
         const data = await productModel.findById(req.params.id);
         const price = data.price * req.body.waranty;
@@ -69,11 +69,15 @@ res.render('client/allMakanan',{makanan : makanan})
    +---------------------+
    `;
 qrcode.toDataURL(input_,(err,src)=>{
-res.render('client/payment_proccess',{qrcode:src,price:price,data : data,waranty:req.body.waranty,swaranty : data.price})
+res.render('client/payment_proccessQr',{qrcode:src,price:price,data : data,waranty:req.body.waranty,swaranty : data.price})
 })
 
       }
-      if(req.body.cashon) res.send('cashon')
+      if(req.body.cashon){
+        const data = await productModel.findById(req.params.id);
+        const price = data.price * req.body.waranty;
+        res.render('client/payment_proccessCash',{price:price,data : data,waranty:req.body.waranty,swaranty : data.price})
+      }
       }
 }
 export default Controller;
