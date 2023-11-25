@@ -1,4 +1,6 @@
+import DB from "./../Database/MonggoDB.js";
 import productModel from "./../Model/productModel.js";
+import inboxModel from "./../Model/InboxModel.js";
 import qrcode from 'qrcode';
 const Controller = {
     getAllMinuman: async (req,res) => {
@@ -80,7 +82,25 @@ res.render('client/payment_proccessQr',{qrcode:src,price:price,data : data,waran
       }
       },
       inboxView: (req,res)=>{
-        res.render('client/inboxView')
+        res.render('client/inboxView',{message :req.flash('message'),alert: req.flash('alert')})
+      },
+      inbox: async (req,res)=>{
+        let inbox =  new inboxModel({
+          nama : req.body.nama,
+          pesan : req.body.pesan,
+          saran: req.body.saran,
+      });
+        inbox = await inbox.save();
+      if(inbox){
+       
+      req.flash('message',"Berhasil Dikirim 😊")
+          req.flash('alert','primary')
+  res.redirect('http://127.0.0.1:3004/client/inbox')
+      }else{
+          req.flash('message',"Failed 😈 !")
+          req.flash('alert','danger')
+          res.redirect('http://127.0.0.1:3004/client/inbox')
       }
+      },
 }
 export default Controller;

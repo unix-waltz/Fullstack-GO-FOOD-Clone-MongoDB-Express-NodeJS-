@@ -13,4 +13,4 @@ const Schema = new mongoose.Schema({
         type : String,
     },
 })
-export default mongoose.model("menu", Schema);
+export default mongoose.model("user_inbox", Schema);
