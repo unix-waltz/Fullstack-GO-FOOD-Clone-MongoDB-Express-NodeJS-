@@ -1,5 +1,6 @@
 import DB from "./../Database/MonggoDB.js";
 import ProductModel from "../Model/productModel.js"
+import inboxModel from "../Model/InboxModel.js"
 const Controller = {
 dashboardView : (req, res) => {
     res.render('admin/dashboard',{message : false});
@@ -35,6 +36,10 @@ res.redirect('/admin/dashboard/product');
     }catch(e){
         console.log(e)
     }
+    },
+    inboxView: async (req,res) =>{
+const data = await inboxModel.find();
+res.render('admin/inbox',{data:data});
     }
 }
 export default Controller;
