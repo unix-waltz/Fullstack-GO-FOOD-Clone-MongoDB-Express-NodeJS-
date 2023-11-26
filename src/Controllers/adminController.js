@@ -1,6 +1,7 @@
 import DB from "./../Database/MonggoDB.js";
 import ProductModel from "../Model/productModel.js"
 import inboxModel from "../Model/InboxModel.js"
+import productModel from "../Model/productModel.js";
 const Controller = {
 dashboardView : (req, res) => {
     res.render('admin/dashboard',{message : false});
@@ -49,6 +50,10 @@ res.send('failed')
         }catch(e){
             console.log(e)
         }
+    },
+    productShow: async (req,res)=> {
+       const data = await productModel.findById(req.params.id)
+       if(data) return  res.render('admin/productShow',{data: data})
     }
 }
 export default Controller;
