@@ -1,1 +1,25 @@
-<%= data %>
+<%- include('../components_adm/header.ejs') %>
+<style>
+    #container{
+        width: 100% !important;
+    }
+    #nav2{
+        position: fixed;
+    }
+</style>
+
+<br><br>
+<section class="container">
+  
+    <% data.forEach(e => { %>
+        <div class="alert " role="alert" style="border:1px solid gray">
+            <button type="button" class="btn-close float-end" aria-label="Close"></button>
+            <h4 class="alert-heading"><%= e.nama %></h4>
+            <p><%= e.pesan %></p>
+            <hr>
+            <p class="mb-0">saran : <%= e.saran %></p>
+          </div>
+
+    <% }) %>
+</section>
+<%- include('../components_adm/footer.ejs') %>
