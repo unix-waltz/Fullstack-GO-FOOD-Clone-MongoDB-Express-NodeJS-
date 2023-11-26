@@ -7,4 +7,5 @@ Route.get('/dashboard/inbox', Controller.inboxView)
 Route.get('/dashboard/product', Controller.productView)
 Route.get('/dashboard/product/new', Controller.newProductView)
 Route.post('/dashboard/product/new', upload.single('thumbnail'),Controller.newProduct)
+Route.delete('/delete/inbox/:id', Controller.inboxDelete)
 export default Route;

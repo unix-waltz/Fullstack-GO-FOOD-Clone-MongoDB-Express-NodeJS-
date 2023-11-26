@@ -40,6 +40,15 @@ res.redirect('/admin/dashboard/product');
     inboxView: async (req,res) =>{
 const data = await inboxModel.find();
 res.render('admin/inbox',{data:data});
+    },
+    inboxDelete: async (req,res) =>{
+        try{
+const deleteable = await inboxModel.findByIdAndDelete(req.params.id)
+if(deleteable) return res.redirect('/admin/dashboard/inbox');
+res.send('failed')
+        }catch(e){
+            console.log(e)
+        }
     }
 }
 export default Controller;

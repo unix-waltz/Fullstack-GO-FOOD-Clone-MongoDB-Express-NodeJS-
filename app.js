@@ -4,7 +4,10 @@ import env from "dotenv";
 import clientRoute from './src/Routes/client-route.js'
 import adminRoute from './src/Routes/admin-route.js'
 import session from "express-session";
-import flash from 'connect-flash'
+import flash from 'connect-flash';
+import  MethodOverride  from "method-override";
+app.use(MethodOverride('_method'));
+
 env.config();
 
 app.use(session({
