@@ -2,6 +2,7 @@ import DB from "./../Database/MonggoDB.js";
 import ProductModel from "../Model/productModel.js"
 import inboxModel from "../Model/InboxModel.js"
 import productModel from "../Model/productModel.js";
+import tableModel from "../Model/tableModel.js";
 const Controller = {
 dashboardView : (req, res) => {
     res.render('admin/dashboard',{message : false});
@@ -54,6 +55,40 @@ res.send('failed')
     productShow: async (req,res)=> {
        const data = await productModel.findById(req.params.id)
        if(data) return  res.render('admin/productShow',{data: data})
-    }
+    },
+    menuDelete: async (req,res) =>{
+        try{
+const deleteable = await productModel.findByIdAndDelete(req.params.id)
+if(deleteable) return res.redirect('/admin/dashboard/product');
+res.send('failed')
+        }catch(e){
+            console.log(e)
+        }
+    },
+    mejaView : async (req, res) => {
+        const data = await tableModel.find()
+        const trued = await tableModel.find({ used: true });
+        const falsed = await tableModel.find({ used:false });
+        res.render('admin/detailMeja',{data: data,trued : trued, falsed: falsed});
+    },
+    newMejaView : (req, res) => {
+        res.render('admin/mejaNew');
+    },
+    newMeja: async (req,res) => {
+        let table =  new tableModel({
+            no : req.body.no,
+        });
+        try{
+        table = await table.save();
+        if(table){
+    res.redirect('/admin/dashboard/meja');
+        }else{
+            res.redirect('/admin/dashboard/meja');
+        }
+        
+        }catch(e){
+            console.log(e)
+        }
+        },
 }
 export default Controller;

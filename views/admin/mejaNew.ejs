@@ -1,0 +1,21 @@
+<%- include('../components_adm/header.ejs') %>
+<style>
+    #container{
+        width: 100% !important;
+    }
+    #nav2{
+        position: fixed;
+    }
+</style>
+
+<br><br>
+<section class="container">
+  <form action="" method="post" >
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Nomor Meja</label>
+      <input type="text" class="form-control" name="no" id="exampleFormControlInput1" placeholder="" required>
+    </div>
+    <button class="btn btn-sm btn-danger" type="submit">Add</button>
+  </form>
+</section>
+<%- include('../components_adm/footer.ejs') %>

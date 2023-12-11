@@ -44,11 +44,11 @@ height: 13vh;
 margin: 0 auto;
 ">
 <div id="buybtnchl" style="width: 60%;  padding:10px;border-radius:12px;height:auto; box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
-  <a class="btn btn-sm" style="border:1px solid black;">
+  <a href="/admin/dashboard/del/<%= data.id %>" class="btn btn-sm" style="border:1px solid black;">
     <i class="bi bi-trash2"></i> Hapus
 </a> 
  
-<a href="/client/payment/<%= data.id %>?gateway=true&product=<%= data.title %>" class="btn btn-sm btn-danger">
+<a  class="btn btn-sm btn-danger">
     <i class="bi bi-pen"></i>Edit
 </a>
   </div>

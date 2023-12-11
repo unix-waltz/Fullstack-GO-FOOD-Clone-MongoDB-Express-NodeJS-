@@ -9,4 +9,8 @@ Route.get('/dashboard/product/new', Controller.newProductView)
 Route.post('/dashboard/product/new', upload.single('thumbnail'),Controller.newProduct)
 Route.delete('/delete/inbox/:id', Controller.inboxDelete)
 Route.get('/product/detail/:id', Controller.productShow)
+Route.get('/dashboard/del/:id', Controller.menuDelete)
+Route.get('/dashboard/meja', Controller.mejaView)
+Route.get('/dashboard/meja/new',Controller.newMejaView)
+Route.post('/dashboard/meja/new',Controller.newMeja)
 export default Route;

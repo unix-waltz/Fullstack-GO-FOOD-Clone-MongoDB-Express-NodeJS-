@@ -1,0 +1,76 @@
+<%- include('../components_adm/header.ejs') %>
+<style>
+    #container{
+        width: 100% !important;
+    }
+    #nav2{
+        position: fixed;
+    }
+</style>
+<br><br>
+
+<section class="container">
+    <a href="/admin/dashboard/meja/new" class="btn btn-danger">Tambah Meja</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ 
+ <br><br>
+ <p class="d-inline-flex gap-1">
+    <button class="btn btn" style="border : 1px solid gray;"type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2" active>Lihat Semua</button>
+    <a class="btn btn" style="border : 1px solid gray;" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Dipakai</a>
+    <button class="btn btn" style="border : 1px solid gray;" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Kosong</button>
+
+  </p>
+  <div class="row">
+    <div class="col">
+      <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Nomor</th>
+                    <th scope="col">Keterangan</th>
+                    <th scope="col">Opsi</th>
+                  </tr>
+                </thead>
+                <tbody>
+<% trued.forEach(e => { %>
+                  <tr>
+                      <th><%= e.title %></th>
+                      <th><%= e.title %></th>
+                      <a class="btn btn-sm" style="border:0.5px solid gray" href="/admin/product/detail/">Lainya</a>
+                  </tr>
+          <% }) %>
+                </tbody>
+              </table>
+              
+        </div>
+      </div>
+    </div>
+    <div class="col">
+        <div class="collapse multi-collapse" id="multiCollapseExample2">
+            <div class="card card-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nomor</th>
+                            <th scope="col">Keterangan</th>
+                            <th scope="col">Opsi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% falsed.forEach(e => { %>
+                            <tr>
+                                <td><%= e.no %></td>
+                                <td><%=e.used == true ? "Meja Terisi" : "Meja Kosong" %></td>
+                                <td>
+                                    <a class="btn btn-sm" style="border:0.5px solid gray" href="/admin/product/detail/">Lainya</a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+</section>
+<%- include('../components_adm/footer.ejs') %>
