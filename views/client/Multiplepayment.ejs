@@ -1,0 +1,56 @@
+<%- include('../components/header.ejs') %>
+
+<div class="section" style="width: 100%; height: 100vh; background-color: white;">
+    <form action="/client/your/beli/langsung/urlm" method="get">
+<input type="hidden" name="items" value="<%= param %>">
+        <br><br><br><br><br>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
+                        Detail Produk
+                    </button>
+                </h2>
+                <div id="flush-collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFlushExample">
+                    <div class="accordion-body">
+                        <div class="box" style="width: 90%; margin: 0 auto;">
+                            <h5>Keranjang Anda</h5>
+                            <!-- <%= param %> -->
+                            <% data.forEach(product => { %>
+                                <div class="card">
+                                    <div class="card-body">
+                                        <img src="/images/<%= product.thumbnail %>" alt="" style="width: 100px; border-radius: 9px;">
+                                        <h5 style="display: inline-block; margin-left: 10px;"><%= product.title %></h5>
+                                        <input name="warranty" value="1" style="border-radius: 5px; border: 1px solid gray;" id="number" type="number" min="1" max="100">
+                                    </div>
+                                </div>
+                                <br>
+                            <% }) %>
+                            <br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" style="width: 90%; margin: 0 auto;">
+            <h5>Metode Pembayaran</h5>
+            <div class="card">
+                <input type="hidden" name="cashon" value="true">
+                <div class="card-body" style="border: none; padding: 0; background: none; text-align: left; color: inherit; padding: var(--bs-card-spacer-y) var(--bs-card-spacer-x);">
+                    <i class="bi bi-cash-coin"></i> Bayar Langsung(Cash)
+                </div>
+            </div>
+        </div>
+
+        <div class="fixed-bottom" id="buybtn" style="width: 27%; height: 13vh; margin: 0 auto;">
+            <div id="buybtnchl" style="width: 60%; padding: 10px; border-radius: 12px; height: auto; box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+                <button type="submit" class="btn btn-danger" style="border: 1px solid black;">
+                    <i class="bi bi-cart"></i> Bayar
+                </button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<%- include('../components/footer.ejs') %>

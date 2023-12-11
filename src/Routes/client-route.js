@@ -1,7 +1,7 @@
 import express from 'express';
 import clientController from './../Controllers/clientController.js'
 const Route = express.Router();
-
+// 
 
 Route.get('/',clientController.index)
 Route.get('/minuman',clientController.getAllMinuman)
@@ -12,4 +12,7 @@ Route.post('/payment/get/:id',clientController.payment)
 Route.post('/payment/proccess/:id',clientController.paymentProccessQr)
 Route.get('/inbox',clientController.inboxView)
 Route.post('/inbox',clientController.inbox)
+
+Route.get('/your/beli/langsung/url',clientController.MultiplepaymentView)
+Route.get('/your/beli/langsung/urlm',clientController.MultiplepaymentProccess)
 export default Route;

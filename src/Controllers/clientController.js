@@ -102,5 +102,52 @@ res.render('client/payment_proccessQr',{qrcode:src,price:price,data : data,waran
           res.redirect('http://127.0.0.1:3004/client/inbox')
       }
       },
+      MultiplepaymentView: async (req, res) => {
+        try {
+          const data = req.query.items.split(',');
+
+          let arr = [];
+
+          await Promise.all(data.map(async e => {
+              const result = await productModel.findById(e);
+              if (result) {
+                  arr.push(result);
+              }
+          }));
+          if (arr.length > 0) {
+            res.render('client/Multiplepayment', { data: arr,param : req.query.items });
+          } else {
+            res.redirect('/');
+          }
+        } catch (error) {
+          console.error(error);
+          res.status(500).send('Internal Server Error');
+        } 
+      },
+      MultiplepaymentProccess: async (req, res) => {
+        try {
+          const data = req.query.items.split(',');
+
+          let arr = [];
+
+          await Promise.all(data.map(async e => {
+              const result = await productModel.findById(e);
+              if (result) {
+                  arr.push(result);
+              }
+          }));
+          const totalPrice = arr.reduce((accumulator, currentItem) => {
+            return accumulator + currentItem.price;
+        }, 0);
+          if (arr.length > 0) {
+            res.render('client/Multiplepayment2', { data: arr,price: totalPrice});
+          } else {
+            res.redirect('/');
+          }
+        } catch (error) {
+          console.error(error);
+          res.status(500).send('Internal Server Error');
+        } 
+      },
 }
 export default Controller;

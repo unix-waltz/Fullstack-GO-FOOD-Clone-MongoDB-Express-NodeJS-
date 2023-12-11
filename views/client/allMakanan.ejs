@@ -1,34 +1,35 @@
 <%- include('../components/header.ejs') %>
-
 <br><br><br><br>
 
 <section class="pt-5 pb-5" style="z-index: -99;" id="slidder">
     <div class="container">
         <div class="row">
             <div class="col-6">
-                <h5 class="mb-3"> Penawaran Menarik Nih ⚡️</h5>
+                <h5 class="mb-3">Penawaran Menarik Nih ⚡️</h5>
             </div>
             <div class="col-12">
-                <div id="carouselExampleIndicators2" >
-
+                <div id="carouselExampleIndicators2">
                     <div class="">
-                        
-                        <div class=" active">
+                        <div class="active">
                             <div class="row">
-<% makanan.forEach(e => { %>
-
-                                <div class="col-4 mb-3">
-                                    <div class="card" style="overflow: hidden;">
-                                        <img class="img-fluid" alt="100%x280" src="/images/<%= e.thumbnail %>" style="width:280px;height:100px">
-                                        <div class="card-body">
-                                            <h6 class="card-title"><%= e.title %></h6>
-                                            <p class="card-title">Rp. <%= e.price %></p>
-                                            <a href="/client/detail/menu/<%= e.id %>" class="card-text btn btn-sm btn-danger" style="font-size:12px"><i class="bi bi-arrow-right-short"></i> Detail</a>
+                                <% makanan.forEach(e => { %>
+                                    <div class="col-4 mb-3" id="card_select_<%= e.id %>">
+                                        <div class="card" style="overflow: hidden;">
+                                            <img class="img-fluid" alt="100%x280" src="/images/<%= e.thumbnail %>" style="width:280px;height:100px">
+                                            <div class="card-body">
+                                                <h6 class="card-title"><%= e.title %></h6>
+                                                <p class="card-title">Rp. <%= e.price %></p>
+                                                <label for="item_<%= e.id %>">
+                                                    <span class="btn btn-sm" style="border:1px solid black;">
+                                                        <i class="bi bi-cart"></i>
+                                                    </span>
+                                                </label>
+                                                <input type="checkbox" id="item_<%= e.id %>" name="selectedItems" value="<%= e.id %>" onchange="handleCheckboxChange(this)">
+                                                <a href="/client/detail/menu/<%= e.id %>" class="card-text btn btn-sm btn-danger" style="font-size:12px"><i class="bi bi-arrow-right-short"></i> Detail</a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
- 
-<% }) %>
+                                <% }) %>
                             </div>
                         </div>
                     </div>
@@ -37,6 +38,54 @@
         </div>
     </div>
 </section>
-
-
+<div class="fixed-bottom" id="buybtn" style="
+width: 27%;
+height: 13vh;
+margin: 0 auto;
+display:none;
+">
+    <a href="javascript:void(0);" class="btn btn-sm btn-danger" onclick="beliLangsung()">
+        <i class="bi bi-bag"></i> Beli Langsung
+    </a>
+    <div id="buybtnchl" style="width: 60%;  padding:10px;border-radius:12px;height:auto; box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px;">
+    </div>
+</div>
 <%- include('../components/footer.ejs') %>
+
+<script>
+    function handleCheckboxChange(checkbox) {
+        var itemId = checkbox.value;
+        const boxes = document.getElementById('buybtnchl');
+        const title = document.querySelector(`#card_select_${itemId} .card-title`).innerText;
+
+        if (checkbox.checked) {
+            const newTitleElement = document.createElement('span');
+            newTitleElement.textContent = title+',';
+            boxes.appendChild(newTitleElement);
+            const buyBtn = document.getElementById('buybtn');
+            buyBtn.style.display = 'block';
+        } else {
+            const titles = boxes.getElementsByTagName('span');
+            for (let i = 0; i < titles.length; i++) {
+                if (titles[i].textContent === title) {
+                    titles[i].remove();
+                    break;
+                }
+            }
+            if (boxes.children.length === 0) {
+                const buyBtn = document.getElementById('buybtn');
+                buyBtn.style.display = 'none';
+            }
+        }
+    }
+
+    function beliLangsung() {
+        const selectedItems = document.querySelectorAll('input[name="selectedItems"]:checked');
+        const itemIds = Array.from(selectedItems).map(item => item.value);
+
+        if (itemIds.length > 0) {
+            const url = `/client/your/beli/langsung/url?items=${itemIds.join(',')}`;
+            window.location.href = url;
+        }
+    }
+</script>

@@ -27,9 +27,9 @@ app.get('/', (req, res) => {
 })
 app.use('/client', clientRoute);
 app.use('/admin', adminRoute);
-app.use((req, res, next) => {
-    res.status(404).render('404/index');
-  });
+// app.use((req, res, next) => {
+//     res.status(404).render('404/index');
+//   });
 app.listen(process.env.LOCAL_PORT,() =>{
     console.log(`Starting on port ${process.env.LOCAL_PORT}`);
 });
