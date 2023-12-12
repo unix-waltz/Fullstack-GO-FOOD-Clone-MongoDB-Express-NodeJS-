@@ -159,7 +159,7 @@ res.render('client/payment_proccessQr',{qrcode:src,price:price,data : data,waran
           { new: true }
         );
        if(result){
-     res.cookie('session',id,{ maxAge: 10000 })
+     res.cookie('session',id,{ maxAge: 3 * 60 * 60*  1000 })
         res.redirect('/client')
        } 
         }

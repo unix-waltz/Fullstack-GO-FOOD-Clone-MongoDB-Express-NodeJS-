@@ -90,5 +90,42 @@ res.send('failed')
             console.log(e)
         }
         },
+        hapusMeja: async (req,res) =>{
+            try{
+    const deleteable = await tableModel.findByIdAndDelete(req.params.id)
+    if(deleteable) return res.redirect('/admin/dashboard/meja');
+    res.send('failed')
+            }catch(e){
+                console.log(e)
+            }
+        },
+        updateTBL :async (req,res) =>{
+            const id = req.params.id;
+            const condition = req.params.cnd;
+            if(condition == 'true') {
+                if(id){
+             const result = await tableModel.findOneAndUpdate(
+              { _id: id }, 
+              { $set: { used: false } }, 
+              { new: true }
+            );
+           if(result){
+            res.redirect('/admin/dashboard/meja')
+           } 
+            } 
+            }
+            if(condition == 'false') {
+                if(id){
+             const result = await tableModel.findOneAndUpdate(
+              { _id: id }, 
+              { $set: { used: true } }, 
+              { new: true }
+            );
+           if(result){
+            res.redirect('/admin/dashboard/meja')
+           } 
+            } 
+            }
+          }
 }
 export default Controller;

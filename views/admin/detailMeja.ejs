@@ -37,7 +37,14 @@
                                 <td><%= e.no %></td>
                                 <td><%=e.used == true ? "Meja Terisi" : "Meja Kosong" %></td>
                                 <td>
-                                    <a class="btn btn-sm" style="border:0.5px solid gray" href="/admin/product/detail/">Lainya</a>
+                                    
+                                    <div class="dropdown show">
+                                        <a class="btn btn-smdropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border:0.5px solid gray" >Lainya</a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                          <a class="dropdown-item" href="/admin/meja/cnd/<%= e.id %>/true">Perbarui (Kosongkan)</a>
+                                          <a class="dropdown-item" href="/admin/meja/hapus/<%= e.id %>">Hapus</a>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         <% }) %>
@@ -63,7 +70,14 @@
                                 <td><%= e.no %></td>
                                 <td><%=e.used == true ? "Meja Terisi" : "Meja Kosong" %></td>
                                 <td>
-                                    <a class="btn btn-sm" style="border:0.5px solid gray" href="/admin/product/detail/">Lainya</a>
+                                    
+                                    <div class="dropdown show">
+                                        <a class="btn btn-smdropdown-toggle"  role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="border:0.5px solid gray" >Lainya</a>
+                                        <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                          <a class="dropdown-item" href="/admin/meja/cnd/<%= e.id %>/false">Perbarui (Isi Meja)</a>
+                                          <a class="dropdown-item" href="/admin/meja/hapus/<%= e.id %>">Hapus</a>
+                                        </div>
+                                    </div>
                                 </td>
                             </tr>
                         <% }) %>

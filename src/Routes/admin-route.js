@@ -13,4 +13,6 @@ Route.get('/dashboard/del/:id', Controller.menuDelete)
 Route.get('/dashboard/meja', Controller.mejaView)
 Route.get('/dashboard/meja/new',Controller.newMejaView)
 Route.post('/dashboard/meja/new',Controller.newMeja)
+Route.get('/meja/hapus/:id', Controller.hapusMeja)
+Route.get('/meja/cnd/:id/:cnd', Controller.updateTBL)
 export default Route;
