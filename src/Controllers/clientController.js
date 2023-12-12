@@ -2,6 +2,7 @@ import DB from "./../Database/MonggoDB.js";
 import productModel from "./../Model/productModel.js";
 import inboxModel from "./../Model/InboxModel.js";
 import qrcode from 'qrcode';
+import tableModel from "../Model/tableModel.js";
 const Controller = {
     getAllMinuman: async (req,res) => {
         const minuman = await productModel.find({ category: 'minuman' });
@@ -149,5 +150,19 @@ res.render('client/payment_proccessQr',{qrcode:src,price:price,data : data,waran
           res.status(500).send('Internal Server Error');
         } 
       },
+      selectTBL :async (req,res) =>{
+        const id = req.body.selectedTable;
+       if(id){
+         const result = await tableModel.findOneAndUpdate(
+          { _id: id }, 
+          { $set: { used: true } }, 
+          { new: true }
+        );
+       if(result){
+     res.cookie('session',id,{ maxAge: 10000 })
+        res.redirect('/client')
+       } 
+        }
+      }
 }
 export default Controller;

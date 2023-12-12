@@ -1,0 +1,26 @@
+<%- include('../components/header.ejs') %>
+<style>
+    .container {
+        height: 100vh;
+    }
+</style>
+<br><br>
+
+<section class="container">
+    <br><br><br>
+    <form action="/client/ver/tbl" method="post">
+        <div class="form-floating">
+            <select class="form-select" id="floatingSelect" name="selectedTable" aria-label="Floating label select example">
+                <option selected><small style="font-size: 10px !important; color : gray;">*Pilih Lewati Jika Anda Hanya Ingin Dibawa Pulang</small></option>
+                <% data.forEach(e => { %>
+                    <option value="<%= e.id %>"><%= e.no %></option>
+                <% }) %>
+            </select>
+            <label for="floatingSelect">Meja :</label>
+        </div>
+        <br>
+        <a href="/client" class="btn btn-sm btn-dark">Lewati</a>
+        <button class="btn btn-sm" style="border:.5px solid gray" type="submit">Pilih</button>
+    </form>
+</section>
+<%- include('../components/footer.ejs') %>
